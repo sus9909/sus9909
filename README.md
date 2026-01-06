@@ -12,7 +12,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 
 <!--GHPC:START
-<style>
+<style id="ghpc-greeting-style">
 .ghpc-greeting {
     color: #00ffff;
     font-size: 16px;
@@ -36,7 +36,7 @@ Here are some ideas to get you started:
 }
 </style>
 
-<script>
+<script id="ghpc-greeting-script">
 // Wait for page to fully load
 setTimeout(() => {
     // Get current hour
