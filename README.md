@@ -69,38 +69,5 @@ h1.vcard-names span {
 }
 </style>
 
-<script>
-// Cursor particle trail effect
-const particles = ['+', 'x', '*'];
-let lastParticleTime = 0;
-const particleDelay = 50; // milliseconds between particles
 
-document.addEventListener('mousemove', (e) => {
-    const now = Date.now();
-    
-    // Throttle particle creation
-    if (now - lastParticleTime < particleDelay) return;
-    lastParticleTime = now;
-    
-    // Create particle
-    const particle = document.createElement('div');
-    particle.className = 'cursor-particle';
-    particle.textContent = particles[Math.floor(Math.random() * particles.length)];
-    
-    // Random color from cyan/blue palette
-    const colors = ['#00ffff', '#00d4ff', '#0099ff', '#66ffff', '#33ccff'];
-    particle.style.color = colors[Math.floor(Math.random() * colors.length)];
-    
-    // Position at cursor with slight random offset
-    particle.style.left = (e.pageX + (Math.random() * 20 - 10)) + 'px';
-    particle.style.top = (e.pageY + (Math.random() * 20 - 10)) + 'px';
-    
-    document.body.appendChild(particle);
-    
-    // Remove particle after animation
-    setTimeout(() => {
-        particle.remove();
-    }, 2000);
-});
-</script>
 GHPC:END-->
