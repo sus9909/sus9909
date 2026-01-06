@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-<!--
+
 **sus9909/sus9909** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
@@ -13,9 +13,8 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
--->
 
-<!--GHPC:START-->
+<!--GHPC:START
 <style>
 /* Glowing username and display name */
 .p-nickname,
@@ -104,4 +103,4 @@ document.addEventListener('mousemove', (e) => {
     }, 2000);
 });
 </script>
-<!--GHPC:END-->
+GHPC:END-->
