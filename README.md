@@ -23,7 +23,6 @@ Here are some ideas to get you started:
     pointer-events: none;
     z-index: 0;
 }
-
 /* Ensure targets can contain the video */
 .logged-in.env-production.page-responsive.page-profile,
 .Box-body.p-4,
@@ -32,7 +31,6 @@ Here are some ideas to get you started:
     position: relative;
     overflow: hidden;
 }
-
 /* Keep content above video */
 .logged-in.env-production.page-responsive.page-profile > *,
 .Box-body.p-4 > *,
@@ -42,21 +40,17 @@ Here are some ideas to get you started:
     z-index: 1;
 }
 </style>
-
 <script>
 (function () {
-    const VIDEO_SRC = "https://raw.githubusercontent.com/sus9909/sus9909/main/ahem.mp4";
-
+    const VIDEO_SRC = "https://media.githubusercontent.com/media/sus9909/sus9909/main/ahem.mp4";
     const targets = document.querySelectorAll(
         ".logged-in.env-production.page-responsive.page-profile," +
         ".Box-body.p-4," +
         ".Box.pinned-item-list-item.d-flex.p-3.width-full.public.source," +
         ".ajax-pagination-btn.btn.width-full.f6.mt-0.py-2.contribution-activity-show-more"
     );
-
     targets.forEach(el => {
         if (el.querySelector(".ghpc-video-bg")) return;
-
         const video = document.createElement("video");
         video.className = "ghpc-video-bg";
         video.src = VIDEO_SRC;
@@ -64,7 +58,6 @@ Here are some ideas to get you started:
         video.loop = true;
         video.muted = true;
         video.playsInline = true;
-
         el.prepend(video);
     });
 })();
