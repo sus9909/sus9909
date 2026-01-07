@@ -28,12 +28,11 @@ Here are some ideas to get you started:
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.15;
+    opacity: 0.4;
     z-index: -1;
     pointer-events: none;
 }
 
-/* Optional: Add a subtle overlay for better text readability */
 .logged-in.env-production.page-responsive.page-profile::after {
     content: '';
     position: fixed;
