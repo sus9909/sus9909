@@ -13,17 +13,35 @@ Here are some ideas to get you started:
 
 <!--GHPC:START
 <style>
-body::before {
+.logged-in.env-production.page-responsive.page-profile {
+    position: relative;
+}
+
+.logged-in.env-production.page-responsive.page-profile::before {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('https://raw.githubusercontent.com/sus9909/sus9909/refs/heads/main/bigrat.jpg');
+    background-image: url('https://raw.githubusercontent.com/sus9909/sus9909/main/bigrat.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Optional: Add a subtle overlay for better text readability */
+.logged-in.env-production.page-responsive.page-profile::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
     z-index: -1;
     pointer-events: none;
 }
