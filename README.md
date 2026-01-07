@@ -13,7 +13,7 @@ Here are some ideas to get you started:
 
 <!--GHPC:START
 <style>
-/* Shared video styling */
+/* Shared image styling */
 .ghpc-video-bg {
     position: absolute;
     inset: 0;
@@ -23,7 +23,7 @@ Here are some ideas to get you started:
     pointer-events: none;
     z-index: 0;
 }
-/* Ensure targets can contain the video */
+/* Ensure targets can contain the image */
 .logged-in.env-production.page-responsive.page-profile,
 .Box-body.p-4,
 .Box.pinned-item-list-item.d-flex.p-3.width-full.public.source,
@@ -31,7 +31,7 @@ Here are some ideas to get you started:
     position: relative;
     overflow: hidden;
 }
-/* Keep content above video */
+/* Keep content above image */
 .logged-in.env-production.page-responsive.page-profile > *,
 .Box-body.p-4 > *,
 .Box.pinned-item-list-item.d-flex.p-3.width-full.public.source > *,
@@ -42,7 +42,7 @@ Here are some ideas to get you started:
 </style>
 <script>
 (function () {
-    const VIDEO_SRC = "https://media.githubusercontent.com/media/sus9909/sus9909/main/ahem.mp4";
+    const IMAGE_SRC = "https://raw.githubusercontent.com/sus9909/sus9909/refs/heads/main/ahem.gif";
     const targets = document.querySelectorAll(
         ".logged-in.env-production.page-responsive.page-profile," +
         ".Box-body.p-4," +
@@ -51,14 +51,10 @@ Here are some ideas to get you started:
     );
     targets.forEach(el => {
         if (el.querySelector(".ghpc-video-bg")) return;
-        const video = document.createElement("video");
-        video.className = "ghpc-video-bg";
-        video.src = VIDEO_SRC;
-        video.autoplay = true;
-        video.loop = true;
-        video.muted = true;
-        video.playsInline = true;
-        el.prepend(video);
+        const img = document.createElement("img");
+        img.className = "ghpc-video-bg";
+        img.src = IMAGE_SRC;
+        el.prepend(img);
     });
 })();
 </script>
