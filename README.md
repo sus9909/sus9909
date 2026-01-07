@@ -13,6 +13,7 @@ Here are some ideas to get you started:
 
 <!--GHPC:START
 <style>
+/* Background overlay */
 .logged-in.env-production.page-responsive.page-profile {
     position: relative;
 }
@@ -44,5 +45,19 @@ Here are some ideas to get you started:
     z-index: -1;
     pointer-events: none;
 }
+
+/* Requested elements opacity */
+.Box-body.p-4 {
+    opacity: 0.5;
+}
+
+.Box.pinned-item-list-item.d-flex.p-3.width-full.public.source {
+    opacity: 0.5;
+}
+
+.ajax-pagination-btn.btn.width-full.f6.mt-0.py-2.contribution-activity-show-more {
+    opacity: 0.5;
+}
 </style>
 GHPC:END-->
+
