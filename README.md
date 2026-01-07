@@ -13,51 +13,60 @@ Here are some ideas to get you started:
 
 <!--GHPC:START
 <style>
-/* Background overlay */
-.logged-in.env-production.page-responsive.page-profile {
-    position: relative;
-}
-
-.logged-in.env-production.page-responsive.page-profile::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://raw.githubusercontent.com/sus9909/sus9909/main/bigrat.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.4;
-    z-index: -1;
+/* Shared video styling */
+.ghpc-video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     pointer-events: none;
+    z-index: 0;
 }
 
-.logged-in.env-production.page-responsive.page-profile::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Requested elements opacity */
-.Box-body.p-4 {
-    opacity: 0.5;
-}
-
-.Box.pinned-item-list-item.d-flex.p-3.width-full.public.source {
-    opacity: 0.5;
-}
-
+/* Ensure targets can contain the video */
+.logged-in.env-production.page-responsive.page-profile,
+.Box-body.p-4,
+.Box.pinned-item-list-item.d-flex.p-3.width-full.public.source,
 .ajax-pagination-btn.btn.width-full.f6.mt-0.py-2.contribution-activity-show-more {
-    opacity: 0.5;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Keep content above video */
+.logged-in.env-production.page-responsive.page-profile > *,
+.Box-body.p-4 > *,
+.Box.pinned-item-list-item.d-flex.p-3.width-full.public.source > *,
+.ajax-pagination-btn.btn.width-full.f6.mt-0.py-2.contribution-activity-show-more > * {
+    position: relative;
+    z-index: 1;
 }
 </style>
-GHPC:END-->
 
+<script>
+(function () {
+    const VIDEO_SRC = "https://raw.githubusercontent.com/sus9909/sus9909/main/ahem.mp4";
+
+    const targets = document.querySelectorAll(
+        ".logged-in.env-production.page-responsive.page-profile," +
+        ".Box-body.p-4," +
+        ".Box.pinned-item-list-item.d-flex.p-3.width-full.public.source," +
+        ".ajax-pagination-btn.btn.width-full.f6.mt-0.py-2.contribution-activity-show-more"
+    );
+
+    targets.forEach(el => {
+        if (el.querySelector(".ghpc-video-bg")) return;
+
+        const video = document.createElement("video");
+        video.className = "ghpc-video-bg";
+        video.src = VIDEO_SRC;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+
+        el.prepend(video);
+    });
+})();
+</script>
+GHPC:END-->
