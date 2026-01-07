@@ -12,23 +12,21 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 
 <!--GHPC:START
-<script>
-const particles = ['✨', '⭐', '💫', '🌟'];
-let last_particle_time = 0;
-
-document.addEventListener('mousemove', (e) => {
-    const now = Date.now();
-    if (now - last_particle_time < 50) return;
-    last_particle_time = now;
-    
-    const particle = document.createElement('div');
-    particle.className = 'ghpc-cursor-particle';
-    particle.textContent = particles[Math.floor(Math.random() * particles.length)];
-    particle.style.left = e.clientX + 'px';
-    particle.style.top = e.clientY + 'px';
-    
-    document.body.appendChild(particle);
-    setTimeout(() => particle.remove(), 2000);
-});
-</script>
+<style>
+/* Add a custom background image */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://bigrat.monster/media/bigrat.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}
+</style>
 GHPC:END-->
