@@ -13,7 +13,6 @@ Here are some ideas to get you started:
 
 <!--GHPC:START
 <style>
-/* Add a custom background image */
 body::before {
     content: '';
     position: fixed;
@@ -21,7 +20,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('https://bigrat.monster/media/bigrat.jpg');
+    background-image: url('[https://raw.githubusercontent.com/yourusername/yourrepo/main/background.jpg](https://raw.githubusercontent.com/sus9909/sus9909/refs/heads/main/bigrat.jpg)');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
